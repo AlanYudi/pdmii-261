@@ -1,12 +1,12 @@
-class pilha{
+class Pilha{
   List<int> elementos = [];
 
   void empilhar(int valor){
-    pilha.add(valor);
-    print("$valor empilhado")
+    elementos.add(valor);
+    print("$valor empilhado");
   }
 
-  void desempilhar(int valor){
+  void desempilhar(){
     if (elementos.isNotEmpty){
       elementos.removeLast();
     } else{
@@ -14,5 +14,35 @@ class pilha{
     }
 
   }
+  void mostrarTopo(){
+    if(elementos.isEmpty){
+      print("Não há elemento na pilha.");
+    }else{
+      print("O elemento no topo: ${elementos.last}");
+    }
+  }
+  void mostrarPilha(){
+    if(elementos.isEmpty){
+      print("Não há elemento na pilha.");
+    }else{
+      print("Os elementos da pilha são: $elementos");
+    }
 
+  }
+
+}
+void main(){
+  Pilha pilha = Pilha();
+
+  pilha.empilhar(10);
+  pilha.empilhar(20);
+  pilha.empilhar(30);
+
+  pilha.mostrarTopo();
+  pilha.mostrarPilha();
+
+  pilha.desempilhar();
+
+  pilha.mostrarTopo();
+  pilha.mostrarPilha();
 }
